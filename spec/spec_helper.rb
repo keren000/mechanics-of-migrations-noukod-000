@@ -5,7 +5,6 @@ load './Rakefile'
 RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
-
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     begin
@@ -24,6 +23,5 @@ RSpec.configure do |config|
       puts "Database not yet created in config/environment.rb!"
     end
   end
-
   config.order = 'default'
 end
